@@ -1,0 +1,67 @@
+{% extends "core/base.html" %}
+
+{% block main %}
+<section class="container my-5">
+    <h2 class="text-center mb-4">Formulario de Solicitud de Reciclaje</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo electrónico</label>
+                    <input type="text" class="form-control" id="correo" placeholder="Ingresa tu correo electrónico" required>
+                </div>
+                <div class="mb-3">
+                    
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" placeholder="Ingresa tu dirección" required>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Número de Teléfono</label>
+                    <input type="number" class="form-control" id="telefono" placeholder="Ingresa tu número de teléfono" required>
+                </div>
+                <div class="mb-3">
+                    <label for="tipoReciclaje" class="form-label">Tipo de Artículos a Reciclar</label>
+                    <select class="form-select" id="tipoReciclaje" onchange="actualizar()" required >
+                        <option selected disabled>Selecciona una opción</option>
+                        <option value="plastico">Plástico</option>
+                        <option value="papel">Papel</option>
+                        <option value="vidrio">Vidrio</option>
+                        <option value="metales">Metales</option>
+                        <option value="electronicos">Electrónicos</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="selector2" class="form-label">Segundo Selector</label>
+                    <select class="form-select" id="subtipoReciclaje">
+                        <option value="">Seleccione una opción</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Número de Teléfono</label>
+                    <input type="number" class="form-control" id="telefono" min="911111111" max="999999999" placeholder="Ingresa tu número de teléfono (912345678)" required>
+                </div>
+                <div class="mb-3">
+                    <label for="cantidad" class="form-label">Cantidad de residuos</label>
+                    <input type="number" class="form-control" id="cantidad" min="1" max="100" required/>
+                </div>
+                
+
+                <div class="mb-3">
+                    <label for="comentarios" class="form-label">Comentarios</label>
+                    <textarea class="form-control" id="comentarios" rows="4" placeholder="Escribe tus comentarios aquí"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Enviar Solicitud</button>
+            </form>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="static/core/img/eco.png" class="img-form">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quibusdam consectetur recusandae praesentium nesciunt sunt optio impedit consequuntur earum laborum eius, quo nihil harum ullam labore tempora voluptas eligendi sequi officiis. Ducimus non, dolor perspiciatis quas ut eaque rerum, dolores numquam voluptate est eius vero nisi, possimus modi reiciendis porro.</p>
+        </div>
+    </div>
+    
+</section>
+{% endblock main %}

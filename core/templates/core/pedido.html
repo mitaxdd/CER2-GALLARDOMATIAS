@@ -1,0 +1,19 @@
+{% extends "core/base.html" %}
+
+{% block main %}
+
+<h2>Detalles del Pedido</h2>
+<p>Nombre: {{ pedido.nombre }}</p>
+<p>Dirección: {{ pedido.direccion }}</p>
+<p>Total: ${{ pedido.total }}</p>
+<p>Estado: {{ pedido.estado }}</p>
+
+<h3>Productos:</h3>
+<ul>
+    {% for item in productos %}
+        <li>{{ item.producto.nombre }} - Cantidad: {{ item.cantidad }} - Subtotal: ${{ item.producto.precio }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock main %}
+

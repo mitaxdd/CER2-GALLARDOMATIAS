@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+
+{% block main %}
+
+<form action="{% url 'pagar_carrito' %}" method="post">
+    {% csrf_token %}
+    <h2>Completa tu Información</h2>
+    
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" class="form-control" required>
+  
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion" class="form-control" required>
+  
+    <button type="submit" class="btn btn-primary mt-3">Pagar y Crear Pedido</button>
+  </form>
+  
+
+{% endblock main %}
+

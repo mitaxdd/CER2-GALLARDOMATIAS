@@ -1,0 +1,26 @@
+.hero {
+    background-color: #28a745;
+    color: white;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #28a745;
+}
+
+.card-title {
+    color: #28a745;
+}
+
+.img-form{
+    width: 35%;
+}
+
+.carousel{
+    height: 85%;
+}
+
+footer {
+    background-color: #f8f9fa;
+}
+

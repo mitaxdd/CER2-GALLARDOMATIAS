@@ -1,0 +1,32 @@
+{% extends "core/base.html" %}
+
+{% block main %}
+<div class="container mt-5">
+    <h2>Carrito de Compras</h2>
+    <ul class="list-group mb-3">
+      {% for item in carrito_items %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span>{{ item.producto.nombre }} (x{{ item.cantidad }})</span>
+          <span><strong>${{ item.subtotal }}</strong></span>
+          <a href="{% url 'eliminar_del_carrito' item.producto.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <p><strong>Total: ${{ total }}</strong></p>
+    <a href="{% url 'home' %}" class="btn btn-primary">Seguir Comprando</a>
+  </div>
+
+  <form action="{% url 'pagar_carrito' %}" method="post">
+    {% csrf_token %}
+    <h2>Completa tu Información</h2>
+    
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" class="form-control" required>
+  
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion" class="form-control" required>
+  
+    <button type="submit" class="btn btn-primary mt-3">Pagar y Crear Pedido</button>
+  </form>
+{% endblock main %}
+

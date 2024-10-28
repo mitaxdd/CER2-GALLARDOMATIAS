@@ -1,0 +1,27 @@
+
+{% extends "core/base.html" %}
+
+{% block main %}
+
+    <form class="p-8 bg-white rounded-4 shadow " style="max-width: 400px; width: 100%" action="/core/registro/" method="post">
+        {% csrf_token %}
+        <h2 class="text-center mb-4 fw-bold">Registro</h2>
+    
+    <div class="mb-3 form-control rounded-pill">
+      {{ form.username.label_tag }}
+      {{ form.username}}
+    </div>
+    
+    <div class="mb-3 form-control rounded-pill">
+      {{ form.password1.label_tag }}
+      {{ form.password1 }}
+    </div>
+    
+    <div class="mb-3 form-control rounded-pill">
+      {{ form.password2.label_tag }}
+      {{ form.password2 }}
+    </div>
+    
+    <button type="submit" class="btn btn-primary w-100 rounded-pill">Crear Cuenta</button> 
+    </form>
+{% endblock %}
